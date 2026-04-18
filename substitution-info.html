@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Substitution Cipher</title>
+
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+
+        <!-- HEADER -->
+        <div class="header">
+            <a href="home.html" class="logo">C1PHER</a>
+
+            <div class="user-menu">
+                <button class="user-menu-btn" aria-label="User menu">
+                    &#9776
+                </button>
+                <div class="user-dropdown">
+                    <a href="profile.html">Profile</a>
+                    <a href="journey.html">Journey</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="home.html" onclick="localStorage.removeItem('user')">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-container">
+            <h1>Substitution Cipher</h1>
+
+            <p>
+                The Substitution Cipher generalizes the Shift Cipher. It does this by allowing any
+                combination of the alphabet as a key. This results in 26! possible keys. 
+            </p>
+
+            <p>
+                The method for the Substitution Cipher, like the Shift Cipher, involves writing out 
+                the alphabet. However instead of assigning the letters as with the Shift Cipher, this 
+                time the letters are scrambled in no particular order. 
+            </p>
+
+            <pre class="cipher-example">
+
+For example:
+
+A   B   C   D   E   F   G   H   I   J   K   L   M   N   O   P   Q   R   S   T   U   V   W   X   Y   Z
+↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓
+Z   A   Y   B   X   C   W   D   V   E   U   F   T   G   S   H   R   I   Q   J   P   K   O   L   N   M
+
+Ciphertext → Osibq txzg odzj V jdxt js txzg.
+Plaintext → Words mean what I want them to mean.
+
+            </pre>
+
+            <div class="info-actions">
+                <a href="substitution-challenge.html" class="primary-btn">Start Challenge</a>
+                <a href="journey.html" class="secondary-btn">Back to Journey</a>
+            </div>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="main.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Settings Page</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="styles.css">
+
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap">
+    </head>
+
+    <body>
+        
+        <!-- HEADER -->
+        <div class="header">
+            <a href="home.html" class="logo">C1PHER</a>
+
+            <div class="user-menu">
+                <button class="user-menu-btn" aria-label="User menu">
+                    &#9776
+                </button>
+                <div class="user-dropdown">
+                    <a href="profile.html">Profile</a>
+                    <a href="journey.html">Journey</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="home.html" onclick="localStorage.removeItem('user')">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="settings-container">
+
+            <h1>Settings</h1>
+            <p class="settings-subtitle">Customise your experience here!</p>
+
+            <!-- APPEARANCE -->
+            <section class="settings-section">
+            <h2> Appearance</h2>
+
+            <div class="setting-row">
+                <span class="setting-label">Theme</span>
+                <div class="setting-control">
+                    <label>
+                        <input type="radio" name="theme" value="light" checked>
+                        Light
+                    </label>
+                    <label>
+                        <input type="radio" name="theme" value="dark">
+                        Dark
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACCOUNT -->
+         <section class="settings-section">
+            <h2>Account</h2>
+
+            <div class="setting-row">
+                <span class="setting-label">Username</span>
+                <input type="text" value="cipher_user" disabled>
+            </div>
+
+            <div class="setting-row">
+                <span class="setting-label">Password</span>
+                <button class="secondary-btn small-btn">Change Password</button>
+            </div>
+
+            <div class="setting-row">
+                <span class="setting-label">Delete Account</span>
+                <button id="delete-account" class="secondary-btn small-btn">Delete Account</button>
+            </div>
+         </section>
+
+        </div>
+
+        <!-- JavaScript -->
+        <script src="main.js"></script>
+
+    </body>
+</html>

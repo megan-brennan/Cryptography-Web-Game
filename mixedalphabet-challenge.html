@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Mixed Alphabet Cipher - Challenge</title>
+
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+
+        <!-- HEADER -->
+        <div class="header">
+            <a href="home.html" class="logo">C1PHER</a>
+
+            <div class="user-menu">
+                <button class="user-menu-btn" aria-label="User menu">
+                    &#9776
+                </button>
+                <div class="user-dropdown">
+                    <a href="profile.html">Profile</a>
+                    <a href="journey.html">Journey</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="home.html" onclick="localStorage.removeItem('user')">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN CHALLENGE WORKSPACE -->
+        <div class="mixed-alphabet-challenge">
+            <div class="challenge-workspace">
+
+                <!-- LEFT PANEL (ATTEMPT HISTORY) -->
+                <aside class="attempt-sidebar">
+                    <h3>Attempts</h3>
+                    <div id="feedback-area" class="feedback-area"></div>
+                </aside>
+
+                <!-- MAIN EDITOR AREA -->
+                <section class="challenge-editor">
+
+                    <div class="editor-content">
+
+                        <h1>Mixed Alphabet Cipher</h1>
+
+                        <p class="challenge-question">
+                        Encrypt the first 11 letters of the quote "I can't go back to yesterday." using the mixed alphabet cipher.
+                        <br><br>
+                        The keyword is <strong>ENIGMA</strong> and the plaintext and ciphertext alphabets have been provided for you.
+                        </p>
+
+                        <div class="key">
+                            <div class="row">
+                                <span class="label">Plaintext Alphabet</span>
+                                <div class="letters">
+                                    <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span>
+                                    <span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span>
+                                    <span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span>
+                                    <span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <span class="label">Ciphertext Alphabet</span>
+                                <div class="letters">
+                                    <span>E</span><span>N</span><span>I</span><span>G</span><span>M</span><span>A</span><span>B</span>
+                                    <span>C</span><span>D</span><span>F</span><span>H</span><span>J</span><span>K</span><span>L</span>
+                                    <span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span>
+                                    <span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span>
+                                </div>
+                            </div>
+
+                            <p>
+                            <br>
+                            What is the ciphertext for "I can't go back"?
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- ACTION BAR -->
+                    <div class="editor-actions">
+                        <button id="hint-btn" class="secondary-btn small-btn">?</button>
+                        <a href="mixedalphabet-info.html" class="secondary-btn">Info</a>
+                        <button class="primary-btn" id="submit-btn">Submit</button>
+                    </div>
+
+                    <!-- TERMINAL INPUT BAR -->
+                    <div class="terminal-bar">
+                        <span class="terminal-prompt">cipher:~$</span>
+                        <input type="text" id="answer" placeholder="enter first 11 ciphertext letters..." />
+                    </div>
+
+                </section>
+
+                <!-- INFO MODAL -->
+                <div id="helpModal" class="modal">
+                    <div class="modal-content result-modal">
+                        <span class="close" id="close-help">&times;</span>
+
+                        <h2>Before you start:</h2>
+
+                        <p>
+                            Guess the decrypted word. Each attempt gives feedback:
+                        </p>
+
+                        <p>
+                            <span class="letter correct">a</span> correct letter in correct position<br>
+                            <span class="letter present">a</span> correct letter in wrong position<br>
+                            <span class="letter absent">a</span> letter not in the answer
+                        </p>
+
+                        <p>
+                            Scoring:
+                        </p>
+
+                        <ul>
+                            <li>Frst try = 10 points</li>
+                            <li>Each extra attempt reduces score</li>
+                            <li>Minimum score = 2 points</li>
+                        </ul>
+
+                        <p>
+                            Good Luck!
+                        </p>
+
+                        <button class="primary-btn" id="start-challenge">Start Challenge</button>
+                    </div>
+                </div>
+
+                <!-- RESULT MODAL -->
+                <div id="resultModal" class="modal">
+                    <div class="modal-content result-modal">
+                        <span class="close" id="close-result">&times;</span>
+                        
+                        <h2 id="result-title">Result</h2>
+                        <p id="result-message"></p>
+
+                        <div class="modal-actions">
+                            <a href="journey.html" class="primary-btn">Back to Journey</a>
+                            <a href="profile.html" class="secondary-btn">View Profile</a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+           <!-- JavaScript -->
+        <script src="main.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Shift Cipher - Challenge Two</title>
+
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body id="shift-challenge-two">
+
+        <!-- HEADER -->
+        <div class="header">
+            <a href="home.html" class="logo">C1PHER</a>
+
+            <div class="user-menu">
+                <button class="user-menu-btn" aria-label="User menu">
+                    &#9776
+                </button>
+                <div class="user-dropdown">
+                    <a href="profile.html">Profile</a>
+                    <a href="journey.html">Journey</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="home.html" onclick="localStorage.removeItem('user')">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="shift-challenge-two">
+            <!-- MAIN CHALLENGE WORKSPACE -->
+            <div class="challenge-workspace">
+
+                <!-- LEFT PANEL (ATTEMPT HISTORY) -->
+                <aside class="attempt-sidebar">
+                    <h3>Attempts</h3>
+                    <div id="feedback-area" class="feedback-area"></div>
+                </aside>
+
+                <!-- MAIN EDITOR AREA -->
+                <section class="challenge-editor">
+
+                    <div class="editor-content">
+
+                        <h1>Shift Cipher- Hard Challenge</h1>
+
+                    <p class="challenge-question">
+                        Decrypt the first word from the following ciphertext <strong>"LPDJLQDWLRQ LV 
+                        WKH RQOB ZHDSRQ"</strong>.
+                        <br><br>
+                        Given that in the ciphertext alphabet the letter L has the frequency 7.0
+                    </p>
+
+                    <div class="cipher-example">
+
+<div class="frequencies-grid" id="shift-info-grid">
+    <div>Letter</div><div>Percentage</div><div>Letter</div><div>Percentage</div>
+    <div>A</div><div>8.2</div><div>N</div><div>6.7</div>
+    <div>B</div><div>1.5</div><div>O</div><div>7.5</div>
+    <div>C</div><div>2.8</div><div>P</div><div>1.9</div>
+    <div>D</div><div>4.2</div><div>Q</div><div>0.1</div>
+    <div>E</div><div>12.7</div><div>R</div><div>6.0</div>
+    <div>F</div><div>2.2</div><div>S</div><div>6.3</div>
+    <div>G</div><div>2.0</div><div>T</div><div>9.0</div>
+    <div>H</div><div>6.1</div><div>U</div><div>2.8</div>
+    <div>I</div><div>7.0</div><div>V</div><div>1.0</div>
+    <div>J</div><div>0.1</div><div>W</div><div>2.4</div>
+    <div>K</div><div>0.8</div><div>X</div><div>0.1</div>
+    <div>L</div><div>4.0</div><div>Y</div><div>2.0</div>
+    <div>M</div><div>2.4</div><div>Z</div><div>0.1</div>
+</div>
+
+                    </div>
+            </div>
+
+                    <!-- ACTION BAR -->
+                    <div class="editor-actions">
+                        <button id="open-help" class="secondary-btn small">?</button>
+                        <a href="shift-info.html" class="secondary-btn">Info</a>
+                        <button class="primary-btn" id="submit-btn">Submit</button>
+                    </div>
+
+                    <!-- TERMINAL INPUT BAR -->
+                    <div class="terminal-bar">
+                        <span class="terminal-prompt">cipher:~$</span>
+                        <input type="text" id="answer" placeholder="type decrypted message..." />
+                    </div>
+
+                </section>
+
+            <!-- INFO MODAL -->
+            <div id="helpModal" class="modal">
+                <div class="modal-content result-modal">
+                    <span class="close" id="close-help">&times;</span>
+
+                    <h2>Before you start:</h2>
+
+                    <p>
+                        Guess the decrypted word. Each attempt gives feedback:
+                    </p>
+
+                    <p>
+                        <span class="letter correct">a</span> correct letter in correct position<br>
+                        <span class="letter present">a</span> correct letter in wrong position<br>
+                        <span class="letter absent">a</span> letter not in the answer
+                    </p>
+
+                    <p>
+                        Scoring:
+                    </p>
+
+                    <ul>
+                        <li>Frst try = 10 points</li>
+                        <li>Each extra attempt reduces score</li>
+                        <li>Minimum score = 2 points</li>
+                    </ul>
+
+                    <p>
+                        Good Luck!
+                    </p>
+
+                    <button class="primary-btn" id="start-challenge">Start Challenge</button>
+                </div>
+            </div>
+
+            <!-- RESULT MODAL -->
+            <div id="resultModal" class="modal">
+                <div class="modal-content result-modal">
+                    <span class="close" id="close-result">&times;</span>
+                    
+                    <h2 id="result-title">Result</h2>
+                    <p id="result-message"></p>
+
+                    <div class="modal-actions">
+                        <a href="journey.html" class="primary-btn">Back to Journey</a>
+                        <a href="profile.html" class="secondary-btn">View Profile</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+           <!-- JavaScript -->
+        <script src="main.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Rail Fence Cipher - Challenge</title>
+
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+
+        <!-- HEADER -->
+        <div class="header">
+            <a href="home.html" class="logo">C1PHER</a>
+
+            <div class="user-menu">
+                <button class="user-menu-btn" aria-label="User menu">
+                    &#9776
+                </button>
+                <div class="user-dropdown">
+                    <a href="profile.html">Profile</a>
+                    <a href="journey.html">Journey</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="home.html" onclick="localStorage.removeItem('user')">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN CHALLENGE WORKSPACE -->
+        <div class="rail-challenge">
+            <div class="challenge-workspace">
+
+                <!-- LEFT PANEL (ATTEMPT HISTORY) -->
+                <aside class="attempt-sidebar">
+                    <h3>Progress</h3>
+
+                    <p>Mistakes: <span id="mistakes">0</span></p>
+                    <p>Hints Used: <span id="hintsUsed">0</span></p>
+                    <p>Score: <span id="score">10</span></p>
+                    <div id="feedback-area" class="feedback-area"></div>
+                </aside>
+
+                <!-- MAIN EDITOR AREA -->
+                <section class="challenge-editor">
+
+                    <div class="editor-content">
+
+                        <h1>Rail Fence Cipher</h1>
+
+                        <p class="challenge-question">
+                        You are encrypting the following quote "Imagination is the only weapon"
+                        using the rail fence cipher. 
+                        <br><br>
+                        Click cells to recreate the ciphertext route.
+                        </p>
+
+                        <!-- GRID -->
+                        <div class="rail-grid" id="rail-challenge-grid"></div>
+
+                        <p>
+                        What are the <strong>first 10 letters</strong> of the ciphertext?
+                        </p>
+                    </div>
+
+                    <!-- ACTION BAR -->
+                    <div class="editor-actions">
+                        <button id="hint-btn" class="secondary-btn small-btn">Hint</button>
+                        <a href="railfence-info.html" class="secondary-btn">Info</a>
+                        <button class="primary-btn" id="submit-rail">Submit</button>
+                    </div>
+
+                    <!-- TERMINAL INPUT BAR -->
+                    <div class="terminal-bar">
+                        <span class="terminal-prompt">cipher:~$</span>
+                        <input type="text" id="answer" placeholder="enter first 10 ciphertext letters..." />
+                    </div>
+
+                </section>
+
+                <!-- RESULT MODAL -->
+                <div id="resultModal" class="modal">
+                    <div class="modal-content result-modal">
+                        <span class="close" id="close-result">&times;</span>
+                        
+                        <h2 id="result-title">Result</h2>
+                        <p id="result-message"></p>
+
+                        <div class="modal-actions">
+                            <a href="journey.html" class="primary-btn">Back to Journey</a>
+                            <a href="profile.html" class="secondary-btn">View Profile</a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+           <!-- JavaScript -->
+        <script src="main.js"></script>
+
+    </body>
+</html>

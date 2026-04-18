@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>C1PHER</title>
+
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+
+        <!-- HEADER -->
+        <div class="header">
+            <a href="home.html" class="logo">C1PHER</a>
+
+            <div class="user-menu">
+                <button class="user-menu-btn" aria-label="User menu">
+                    &#9776
+                </button>
+                <div class="user-dropdown">
+                    <a href="profile.html">Profile</a>
+                    <a href="journey.html">Journey</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="home.html" onclick="localStorage.removeItem('user')">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main">
+            <h1>C1PHER</h1>
+            <p class="tagline">Welcome to C1PHER!</p>
+
+            <p class="description">Learn classical ciphers and test your skills through interactive challenges!</p>
+
+            <div class="cta-buttons">
+                <button id="loginBtn" class="primary-btn">Log In</button>
+                <button id="signupBtn" class="secondary-btn">Sign Up</button>
+            </div>
+        </div>
+
+        <!-- LOGIN -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close" data-close="loginModal">&times;</span>
+                <h2>Log In</h2>
+
+                <form id="login-form">
+                    <label>Username</label>
+                    <input type="text" id="login-username" required>
+
+                    <label>Password</label>
+                    <input type="password" id="login-password" required>
+
+                    <button type="submit" class="primary-btn">Log In</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- SIGNUP -->
+        <div id="signupModal" class="modal">
+            <div class="modal-content">
+                <span class="close" data-close="signupModal">&times;</span>
+                <h2>Sign Up</h2>
+
+                <form id="signup-form">
+                    <label>Username</label>
+                    <input type="text" id="signup-username" required>
+
+                    <label>Password</label>
+                    <input type="password" id="signup-password" required>
+
+                    <button type="submit" class="primary-btn">Create Account</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="main.js"></script>
+
+    </body>
+</html>

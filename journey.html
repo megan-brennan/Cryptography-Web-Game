@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Journey Page</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="styles.css">
+
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap">
+    </head>
+
+    <body>
+        <!-- HEADER -->
+        <div class="header">
+            <a href="home.html" class="logo">C1PHER</a>
+
+            <div class="user-menu">
+                <button class="user-menu-btn" aria-label="User menu">
+                    &#9776
+                </button>
+                <div class="user-dropdown">
+                    <a href="profile.html">Profile</a>
+                    <a href="journey.html">Journey</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="home.html" onclick="localStorage.removeItem('user')">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- TIMELINE -->
+        <div class="journey-container">
+            <div class="timeline-wrapper">
+                <div class="timeline-scroll">
+
+                    <div class="timeline-line"></div>
+
+                    <a href="shift-info.html" class="cipher-node top">
+                        <p>Shift Cipher</p>
+                    </a>
+
+                    <a href="substitution-info.html" class="cipher-node bottom">
+                        <p>Substitution Cipher</p>
+                    </a>
+
+                    <a href="mixedalphabet-info.html" class="cipher-node top">
+                        <p>Mixed Alphabet Cipher</p>
+                    </a>
+
+                    <a href="transposition-info.html" class="cipher-node bottom">
+                        <p>Transposition Cipher</p>
+                    </a>
+
+                    <a href="route-info.html" class="cipher-node top">
+                        <p>Route Cipher</p>
+                    </a>
+
+                    <a href="railfence-info.html" class="cipher-node bottom">
+                        <p>Rail Fence Cipher</p>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="main.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Mixed Alphabet Cipher</title>
+
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+
+        <!-- HEADER -->
+        <div class="header">
+            <a href="home.html" class="logo">C1PHER</a>
+
+            <div class="user-menu">
+                <button class="user-menu-btn" aria-label="User menu">
+                    &#9776
+                </button>
+                <div class="user-dropdown">
+                    <a href="profile.html">Profile</a>
+                    <a href="journey.html">Journey</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="home.html" onclick="localStorage.removeItem('user')">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-container">
+            <h1>Mixed Alphabet Cipher</h1>
+
+            <p>
+                The Mixed Alphabet Cipher uses a keyword or key phrase in contrast to the Shift and 
+                Substitution Ciphers. The first step for this cipher is choosing a keyword/phrase. 
+                Once this has been done, write out the keyword and then the remainder of the alphabet 
+                in alphabetical order. (Any repeating letters in the keyword are only written out the 
+                first time!)
+            </p>
+
+            <p>
+                Once this has been done write out the alphabet normally as well either above or below
+                and you will have a key for plaintext to ciphertext! 
+            </p>
+
+            <pre class="cipher-example">
+For example:
+
+Using MONOALPHABETIC as the keyword
+
+0   1   2   3   4   5   6   7   8   9   10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25
+A   B   C   D   E   F   G   H   I   J   K   L   M   N   O   P   Q   R   S   T   U   V   W   X   Y   Z
+↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓ 
+M   O   N   A   L   P   H   B   E   T   I   C   D   F   G   J   K   Q   R   S   U   V   W   X   Y   Z
+
+Ciphertext → Fgsbefh wguca ol wbms es er.
+Plaintext → Nothing would be what it is.
+
+            </pre>
+
+            <p>
+                Notice in the example above that the last six letters of the alphabet are the same in 
+                both plaintext and ciphertext! Keywords and phrases need to be choosen carefully as to 
+                make sure that the ciphertext is actually scrambled!
+            </p>
+
+            <div class="info-actions">
+                <a href="mixedalphabet-challenge.html" class="primary-btn">Start Challenge</a>
+                <a href="journey.html" class="secondary-btn">Back to Journey</a>
+            </div>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="main.js"></script>
+        
+    </body>
+</html>

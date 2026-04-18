@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Route Cipher</title>
+
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+
+        <!-- HEADER -->
+        <div class="header">
+            <a href="home.html" class="logo">C1PHER</a>
+
+            <div class="user-menu">
+                <button class="user-menu-btn" aria-label="User menu">
+                    &#9776
+                </button>
+                <div class="user-dropdown">
+                    <a href="profile.html">Profile</a>
+                    <a href="journey.html">Journey</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="home.html" onclick="localStorage.removeItem('user')">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-container">
+            <h1>Route Cipher</h1>
+
+            <p>
+                The Route Cipher is another transposition cipher. For this cipher, we arrange the text we
+                want to encrypt in a grid and read it in a predefined pattern. 
+            </p>
+
+            <p>
+                Fun fact: the Union Route Cipher, which was used by the Union forces during the American
+                Civil War is a variation of the Route Cipher. Instead of transposing letters by the given
+                route, whole words were moved around, sometimes adding whole null words to the ciphertext 
+                to help obscure meaning. 
+            </p>
+
+            <pre class="cipher-example">
+For example:
+
+<div class="route-grid" id="route-info-grid">
+    <div>W</div><div>E</div><div>R</div><div>E</div><div>A</div>
+    <div>L</div><div>L</div><div>M</div><div>A</div><div>D</div>
+    <div>H</div><div>E</div><div>R</div><div>E</div><div>X</div>
+</div>
+
+<button id="show-route-btn" class="secondary-btn small-btn">Show Route</button>
+
+Ciphertext → Wlhe ler mre aeadx.
+Plaintext → We're all mad here.
+
+            </pre>
+
+            <p>
+                Note that in the example an X was added to the grid that wasn't in the plaintext. This was
+                done to finish filling out the grid.
+            </p>
+
+            <div class="info-actions">
+                <a href="route-challenge.html" class="primary-btn">Start Challenge</a>
+                <a href="journey.html" class="secondary-btn">Back to Journey</a>
+            </div>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="main.js"></script>
+        
+    </body>
+</html>

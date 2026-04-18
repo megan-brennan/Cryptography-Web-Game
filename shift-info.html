@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Shift Cipher</title>
+
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+
+        <!-- HEADER -->
+        <div class="header">
+            <a href="home.html" class="logo">C1PHER</a>
+
+            <div class="user-menu">
+                <button class="user-menu-btn" aria-label="User menu">
+                    &#9776
+                </button>
+                <div class="user-dropdown">
+                    <a href="profile.html">Profile</a>
+                    <a href="journey.html">Journey</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="home.html" onclick="localStorage.removeItem('user')">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-container">
+            <h1>Shift Cipher</h1>
+
+            <p>
+                The Shift Cipher is one of the earliest forms of encryption, where each letter
+                in the alphabet is shifted by a fixed number of positions. When the shift value
+                is three, it is often referred to as the Caesar Cipher.
+            </p>
+
+            <p>
+                The method involves assigning the letter A the number 0, the letter B the number 1,
+                and so on, until Z is assigned the number 25. The plaintext message is then converted
+                into a sequence of numbers. To acquire the ciphertext, the secret key k modulo 26 is 
+                added to each number, and the resulting sequence of numbers is then translated back 
+                into letters. 
+            </p>
+
+            <p>
+                Since there are only 26 possible keys, the shift cipher can be easily broken through 
+                brute force.
+            </p>
+
+            <pre class="cipher-example">
+For example:
+
+Shift → 3
+
+0   1   2   3   4   5   6   7   8   9   10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25
+A   B   C   D   E   F   G   H   I   J   K   L   M   N   O   P   Q   R   S   T   U   V   W   X   Y   Z
+↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓   ↓ 
+D   E   F   G   H   I   J   K   L   M   N   O   P   Q   R   S   T   U   V   W   X   Y   Z   A   B   C
+
+Ciphertext → Zkr lq wkh zruog dp L? Dk, wkw’v wkh juhdw sxccoh.
+Plaintext → Who in the world am I? Ah, that’s the great puzzle.
+            </pre>
+
+            <p>
+                The Shift Cipher can also be cracked using letter frequencies.
+            </p>
+
+            <div class="cipher-example">
+For example:
+
+<div class="frequencies-grid" id="shift-info-grid">
+    <div>Letter</div><div>Percentage</div><div>Letter</div><div>Percentage</div>
+    <div>A</div><div>8.2</div><div>N</div><div>6.7</div>
+    <div>B</div><div>1.5</div><div>O</div><div>7.5</div>
+    <div>C</div><div>2.8</div><div>P</div><div>1.9</div>
+    <div>D</div><div>4.2</div><div>Q</div><div>0.1</div>
+    <div>E</div><div>12.7</div><div>R</div><div>6.0</div>
+    <div>F</div><div>2.2</div><div>S</div><div>6.3</div>
+    <div>G</div><div>2.0</div><div>T</div><div>9.0</div>
+    <div>H</div><div>6.1</div><div>U</div><div>2.8</div>
+    <div>I</div><div>7.0</div><div>V</div><div>1.0</div>
+    <div>J</div><div>0.1</div><div>W</div><div>2.4</div>
+    <div>K</div><div>0.8</div><div>X</div><div>0.1</div>
+    <div>L</div><div>4.0</div><div>Y</div><div>2.0</div>
+    <div>M</div><div>2.4</div><div>Z</div><div>0.1</div>
+</div>
+
+<p>
+    If the ciphertext you are decrypting is big enough you can actually calculate the 
+    ciphertext letter frequencies yourself! But this would require a really long message.
+    <br><br>
+    For this example, you are given the letter frequency for a ciphertext letter. So if 
+    you know that in the ciphertext a letter has the frequency 12.7 and that for
+    English letter frequencies the letter E has the frequeny 12.7 then you can calculate
+    shift that way. However some letters have the same frequency, for example, both the 
+    letters C and U have the frequency 2.8. If you know a ciphertext letter has this frquency,
+    it may take some trial and error to determine the correct shift. However once you have 
+    calculated your two potential shift keys, only one will translate your ciphertext into something 
+    that makes sense. 
+    <br><br>
+    For this example, lets say the letter A in the ciphertext has the frequency 2.8. This
+    means that A in ciphertext is either C or U in plaintext. Using this knowledge you can 
+    calculate that your shift key will either be 6 or 24.
+    <br><br>
+    Let's check a shift of 6 first: 
+    <br>
+    Ciphertext → G ayl'r em zyai rm wcqrcpbyw zcaysqc G uyq y bgddcpclr ncpqml rfcl.
+    <br>
+    Would give us a plaintext of:
+    <br>
+    Plaintext → A usf'l yg tsuc lg qwklwjvsq twusmkw A osk s vaxxwjwfl hwjkgf lzwf.
+    <br><br>
+    However this doesn't make much sense, so lets check a shift of 24. This gives us the 
+    following plaintext which makes a lot more sense.
+    <br> 
+    Ciphertext → G ayl'r em zyai rm wcqrcpbyw zcaysqc G uyq y bgddcpclr ncpqml rfcl.
+    <br>
+    Plaintext → I can't go back to yesterday because I was a different person then.
+</p>
+
+</div>
+
+            <p>
+                If you know the ciphertext's letter frequencies these can be used to work out the
+                shift key, or, depending on the size of the text you are decrypting you are able to
+                calculate frequencies yourself. 
+            </p>
+
+            <div class="info-actions">
+                <a href="shift-challenge.html" class="primary-btn">Start Challenge</a>
+                <a href="shift-challenge-two.html" class="primary-btn">Hard Challenge</a>
+                <a href="journey.html" class="secondary-btn">Back to Journey</a>
+            </div>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="main.js"></script>
+        
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Transposition Cipher</title>
+
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500;600;700&display=swap">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+
+        <!-- HEADER -->
+        <div class="header">
+            <a href="home.html" class="logo">C1PHER</a>
+
+            <div class="user-menu">
+                <button class="user-menu-btn" aria-label="User menu">
+                    &#9776
+                </button>
+                <div class="user-dropdown">
+                    <a href="profile.html">Profile</a>
+                    <a href="journey.html">Journey</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="home.html" onclick="localStorage.removeItem('user')">Logout</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-container">
+            <h1>Transposition Cipher</h1>
+
+            <p>
+                Unlike the ciphers we have looked at so far where we replace each letter with a 
+                different letter or symbol to produce the ciphertext, in the Transposition Cipher, 
+                the letters are just scrambled around. 
+            </p>
+
+            <p>
+                An example of a simple Transposition Cipher would be just reversing the plaintext either
+                as a whole sentence or reversing each word.
+            </p>
+
+            <pre class="cipher-example">
+For example:
+
+Ciphertext → gninnigeb eht ta nigeb.
+Plaintext → Begin at the beginning.
+
+            </pre>
+
+            <div class="info-actions">
+                <a href="transposition-challenge.html" class="primary-btn">Start Challenge</a>
+                <a href="journey.html" class="secondary-btn">Back to Journey</a>
+            </div>
+        </div>
+
+        <!-- JavaScript -->
+        <script src="main.js"></script>
+        
+    </body>
+</html>
