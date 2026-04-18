@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "password": "password",
+      "points": 10,
+      "completedChallenges": [
+        1
+      ],
+      "pagesRead": [
+        "shift-info",
+        "substitution-info",
+        "mixedalphabet-info",
+        "transposition-info",
+        "route-info"
+      ],
+      "challengeAttempts": {}
+    }
+  ]
+}
