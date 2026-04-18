@@ -1,0 +1,843 @@
+/* ----------------------------------------------------------------------------------*/
+/* THEMES */
+/* ----------------------------------------------------------------------------------*/
+
+:root {
+    --bg: #ffffff;
+    --bg-soft: #f7f7f7;
+    --text: #000000;
+    --text-muted: #555555;
+    --border: #dddddd;
+    --accent: #000000;
+    --correct: #bd39fc;
+    --present: #ff79c6;
+    --absent: #6b7280;
+    --terminal-bg: #f3f4f6;
+    --terminal-text: #000000;
+    --terminal-accent: #29b4ff;
+    --route-selected: #29b4ff;
+    --route-wrong: #ff5555;
+    --route-hint: #ff79c6;
+}
+
+/* DARK MODE */
+body.dark {
+    --bg: #1f1f1f;
+    --bg-soft: #2a2a2a;
+    --text: #f2f2f2;
+    --text-muted: #b5b5b5;
+    --border: #3a3a3a;
+    --accent: #ffffff;
+    --correct: #8be9fd;
+    --present: #bd93f9;
+    --absent: #9ca3af;
+    --terminal-bg: #1f1f1f;
+    --terminal-text: #e6edf3;
+    --terminal-accent: #c586c0;
+    --route-selected: #c586c0;
+    --route-wrong: #ff5555;
+    --route-hint: #bd93f9;
+}
+
+/* ----------------------------------------------------------------------------------*/
+/* GLOBAL */
+/* ----------------------------------------------------------------------------------*/
+
+body {
+    margin: 0;
+    font-family: 'Source Code Pro', monospace;
+    background: var(--bg);
+    color: var(--text);
+}
+
+html, body {
+    height: 100%;
+}
+
+/* HEADER */
+.header {
+    background: var(--bg);
+    padding: 20px 30px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    font-size: 18px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+}
+
+/* USER MENU */
+.user-menu {
+    position: relative;
+}
+
+.user-menu-btn {
+    background: transparent;
+    color: var(--text);
+    border: none;
+    padding: 6px 12px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 110%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    min-width: 160px;
+    z-index: 100;
+}
+
+.user-dropdown a {
+    display: block;
+    padding: 10px 14px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 14px;
+}
+
+.user-dropdown a:hover {
+    background: var(--bg-soft);
+}
+
+.user-dropdown.open {
+    display: block;
+}
+
+/* ----------------------------------------------------------------------------------*/
+/* HOME PAGE */
+/* ----------------------------------------------------------------------------------*/
+
+.main {
+    background: var(--bg);
+    width: 90%;
+    max-width: 1100px;
+    margin: 80px auto;
+    /* Padding: top and bottom = 100, right and left = 60 */
+    padding: 100px 60px;
+    text-align: center;
+    border-radius: 6px;
+}
+
+/* TEXT */
+.main h1 {
+    margin-top: 0;
+    font-size: 40px;
+}
+
+.tagline {
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.description {
+    font-size: 14px;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 20px auto 40px;
+}
+
+/* BUTTONS */
+.primary-btn {
+    background: var(--accent);
+    color: var(--bg);
+    /* Padding: top and bottom = 12, right and left = 26 */
+    padding: 12px 26px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+
+.secondary-btn {
+    background: transparent;
+    color: var(--accent);
+    /* Padding: top and bottom = 12, right and left = 26 */
+    padding: 12px 26px;
+    border-radius: 30px;
+    font-size: 16px;
+    border: 2px solid var(--accent);
+    cursor: pointer;
+}
+
+.primary-btn, 
+.secondary-btn {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+    opacity: 0.8;
+}
+
+.cta-buttons button {
+    margin: 10px;
+}
+
+/* MODALS */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    padding-top: 100px;
+    /* Specifies stack order of element */
+    z-index: 1000;
+}
+
+.modal-content {
+    margin: auto;
+    background: var(--bg);
+    color: var(--text);
+    padding: 30px;
+    border-radius: 6px;
+    width: 320px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0 16px;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* MOBILE */
+@media screen and (max-width: 500px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .landing {
+        /* Padding: top and bottom = 60, right and left = 30 */
+        padding: 60px 30px;
+    }
+}
+
+/* ----------------------------------------------------------------------------------*/
+/* JOURNEY PAGE */
+/* ----------------------------------------------------------------------------------*/
+
+.journey-container {
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    /* Provides scroll for overflow boxes */
+    overflow-x: auto;
+    /* content is clipped and no scroll is provided */
+    overflow-y: hidden;
+}
+
+/* TIMELINE WRAPPER */
+.timeline-wrapper {
+    padding-left: 120px;
+    padding-right: 300px;
+}
+
+/* SCROLLABLE TIMELINE */
+.timeline-scroll {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 180px;
+    width: max-content;
+}
+
+/* HORIZONTAL LINE */
+.timeline-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--accent);
+    /* Specifies stack order of element */
+    z-index: 0;
+}
+
+/* CIPHER NODES */
+.cipher-node {
+    position: relative;
+    text-align: center;
+    min-width: 160px;
+    /* Specifies stack order of element */
+    z-index: 1;
+    text-decoration: none;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.cipher-node:hover {
+    opacity: 0.7;
+}
+
+/* TEXT */
+.cipher-node p {
+    font-size: 30px;
+    font-weight: 500;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* POSITIONING TEXT */
+.cipher-node.top p {
+    margin-bottom: 50px;
+}
+
+.cipher-node.bottom p {
+    margin-top: 50px;
+}
+
+/* ----------------------------------------------------------------------------------*/
+/* CIPHER INFO PAGES */
+/* ----------------------------------------------------------------------------------*/
+
+.info-container {
+    background: var(--bg);
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 40px;
+    border-radius: 6px;
+}
+
+.info-container h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.info-container p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.cipher-example {
+    background: var(--bg-soft);
+    padding: 16px;
+    border-radius: 4px;
+    font-size: 13px;
+    /* Provides scroll for overflowing boxes */
+    overflow-x: auto;
+    margin: 24px 0;
+}
+
+.info-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* ----------------------------------------------------------------------------------*/
+/* SHIFT CIPHER PAGES */
+/* ----------------------------------------------------------------------------------*/
+
+.frequencies-grid {
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.frequencies-grid div {
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    text-align: center;
+    font-size: 13px;
+}
+
+.frequencies-grid div:nth-child(-n+4) {
+    font-weight: 600;
+    background: var(--bg-soft);
+}
+
+.frequencies-grid div:nth-child(4n+1),
+.frequencies-grid div:nth-child(4n+3) {
+    font-weight: 600;
+}
+
+.frequencies-grid div:nth-child(4n+2),
+.frequencies-grid div:nth-child(4n+4) {
+    color: var(--text-muted);
+}
+
+.modal-content {
+    animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+    from { transform: translateY(10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.challenge-workspace {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: calc(100vh - 80px);
+}
+
+/* LEFT FILE-EXPLORER STYLE PANEL */
+
+.attempt-sidebar {
+    border-right:1px solid var(--border);
+    padding: 20px;
+    background: var(--bg-soft);
+}
+
+.attempt-sidebar h3 {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+/* MAIN EDITOR AREA */
+
+.challenge-editor {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.editor-content {
+    padding: 40px 60px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.editor-actions {
+    display: flex;
+    gap: 15px;
+    padding: 16px 60px;
+    border-top: 1px solid var(--border);
+    background: var(--bg-soft);
+}
+
+.editor-actions .primary-btn,
+.editor-actions .secondary-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.challenge-question {
+    max-width: 700px;
+    margin-bottom: 40px;
+}
+
+/* WORDLE STYLE FEEDBACK */
+
+.feedback-area {
+    font-family: 'Source Code Pro', monospace;
+}
+
+.feedback-row {
+    margin-bottom: 12px;
+}
+
+.letter {
+    display: inline-block;
+    min-width: 22px;
+    padding: 4px;
+    margin-right: 2px;
+    border-bottom: 2px solid var(--border);
+}
+
+.letter.correct {
+    color: var(--correct);
+    border-color: var(--correct);
+}
+
+.letter.present {
+    color: var(--present);
+    border-color: var(--present);
+}
+
+.letter.absent {
+    color: var(--absent);
+}
+
+/* TERMINAL INPUT BAR */
+
+.terminal-bar {
+    margin-top: auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--terminal-bg);
+    color: var(--terminal-text);
+    border-top: 1px solid var(--border);
+    padding: 24px 60px;
+    min-height: 140px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+}
+
+body.dark .terminal-bar {
+    box-shadow: inset 0 1px 0 rgba(0,255,156,0.08); 
+}
+
+.terminal-prompt {
+    font-weight: 600;
+    color: var(--terminal-accent);
+}
+
+.terminal-bar input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--terminal-text);
+    font-family: 'Source Code Pro', monospace;
+    font-size: 16px;
+}
+
+.terminal-bar input::placeholder {
+    color: var(--text-muted);
+}
+
+/* RESULT MODAL (CHALLENGE FEEDBACK) */
+
+.result-modal {
+    text-align: center;
+    max-width: 400px;
+}
+
+.result-modal h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.result-modal p {
+    font-size: 14px;
+    margin: 20px 0 30px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* ----------------------------------------------------------------------------------*/
+/* ROUTE CIPHER PAGES */
+/* ----------------------------------------------------------------------------------*/
+
+/*  Route Grid (shared for both info and challenge */
+
+.route-grid {
+    margin: 10px auto;
+}
+
+
+.route-grid,
+#route-info-grid,
+#route-challenge-grid {
+    display: grid;
+    gap: 6px;
+    justify-content: center;
+}
+
+#route-info-grid div,
+#route-challenge-grid div {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    background: var(--bg-soft);
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1;
+    text-align: center;
+    transition: all 0.25s ease;
+}
+
+/* Info page only grid */
+#route-info-grid {
+    grid-template-columns: repeat(5, 40px);
+}
+
+/* Challenge grid */
+
+#route-challenge-grid {
+    grid-template-columns: repeat(13, 40px);
+}
+
+/* Route States */
+
+/* Info page animation path */
+.route-cell {
+    background: rgba(0, 255, 156, 0.15);
+    color: var(--terminal-accent);
+    border-color: var(--terminal-accent);
+}
+
+/* Active animation step */
+.route-active {
+    background: var(--terminal-accent);
+    color: var(--text);
+    box-shadow: 0 0 12px var(--terminal-accent);
+    transform: scale(1.05);
+}
+
+.route-start {
+    border-color: var(--terminal-accent);
+    box-shadow: 0 0 10px var(--terminal-accent);
+}
+
+/* Challenge States */
+.route-selected {
+    color: var(--terminal-accent);
+    border-color: var(--terminal-accent);
+    box-shadow: 0 0 12px var(--terminal-accent);
+    transform: scale(1.05);
+}
+
+/* Wrong click */
+.route-wrong {
+    color: var(--route-wrong);
+    border-color: var(--route-wrong);
+    box-shadow: 0 0 12px var(--route-wrong);
+    transform: scale(1.05);
+}
+
+/* Hint highlight */
+.route-hint-active {
+    color: var(--route-hint);
+    border-color: var(--route-hint);
+    box-shadow: 0 0 12px var(--route-hint);
+    transform: scale(1.05);
+}
+
+/* ----------------------------------------------------------------------------------*/
+/* CHALLENGE PAGE - SHIFT */
+/* ----------------------------------------------------------------------------------*/
+
+
+
+/* ----------------------------------------------------------------------------------*/
+/* SUBSTITUTION CIPHER INFO */
+/* ----------------------------------------------------------------------------------*/
+
+.key {
+    margin-top: 20px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.label {
+    width: 220px;
+    font-weight: 600;
+}
+
+.letters {
+    display: grid;
+    grid-template-columns: repeat(26, 1fr);
+    gap: 8px;
+}
+
+.letters span {
+    text-align: center;
+}
+
+/* ----------------------------------------------------------------------------------*/
+/* RAIL FENCE CIPHER INFO */
+/* ----------------------------------------------------------------------------------*/
+
+.rail-fence-example {
+    background: var(--bg-soft);
+    padding: 16px;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 24px 0;
+}
+
+.rail-grid-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.rail-grid {
+    margin: 10px auto;
+    display: grid;
+    gap: 6px;
+    justify-content: center;
+    grid-template-columns: repeat(18, 40px);
+}
+
+.rail-cell {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    background: var(--bg-soft);
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.rail-active {
+    color: var(--terminal-accent);
+    border-color: var(--terminal-accent);
+    box-shadow: 0 0 12px var(--terminal-accent);
+    transform: scale(1.05);
+}
+
+.rail-reading {
+    color: var(--terminal-accent);
+    border-color: var(--terminal-accent);
+    box-shadow: 0 0 12px var(--terminal-accent);
+}
+
+/* ----------------------------------------------------------------------------------*/
+/* RAIL FENCE CIPHER CHALLENGE */
+/* ----------------------------------------------------------------------------------*/
+
+#rail-challenge-grid {
+    display: grid;
+    justify-content: center;
+    margin: 30px auto;
+    gap: 6px;
+}
+
+.rail-selected {
+    color: var(--terminal-accent);
+    border-color: var(--terminal-accent);
+    box-shadow: 0 0 12px var(--terminal-accent);
+    transform: scale(1.05);
+}
+
+.rail-wrong {
+    color: var(--route-wrong);
+    border-color: var(--route-wrong);
+    box-shadow: 0 0 12px var(--route-wrong);
+    transform: scale(1.05);
+}
+
+.rail-hint-active {
+    color: var(--route-hint);
+    border-color: var(--route-hint);
+    box-shadow: 0 0 12px var(--route-hint);
+    transform: scale(1.05);
+}
+
+/* ----------------------------------------------------------------------------------*/
+/* PROFILE */
+/* ----------------------------------------------------------------------------------*/
+
+.profile-actions {
+    margin: 30px 0;
+}
+
+.profile-actions .primary-btn {
+    font-size: 18px;
+    padding: 14px 36px;
+}
+
+/* ----------------------------------------------------------------------------------*/
+/* SETTINGS */
+/* ----------------------------------------------------------------------------------*/
+
+.settings-container {
+    max-width: 900px;
+    margin: 40px 0 0 120px;
+    padding-right: 40px;
+}
+
+.settings-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+/* SECTIONS */
+.settings-section {
+    margin-bottom: 60px;
+}
+
+.settings-section h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* ROWS */
+.setting-row {
+    grid-template-columns: 160px auto;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.setting-label {
+    font-size: 14px;
+    color: var(--text);
+}
+
+/* OPTIONS */
+.setting-options {
+    display: flex;
+    gap: 20px;
+}
+
+.setting-options label {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.setting-control {
+    display: flex;
+    gap: 20px;
+}
+
+/* INPUTS */
+.settings-container input[type="text"],
+.settings-container input[type="email"] {
+    width: 260px;
+    font-size: 14px;
+    padding: 6px 8px;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+/* BUTTONS */
+.small-btn {
+    padding: 6px 14px;
+    font-size: 14px;
+    border-radius: 20px;
+}
