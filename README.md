@@ -1,7 +1,7 @@
-# Cryptography Web Game
+# Cryptography Web Game - Dissertation Project
 
 ## Overview
-This project is a web-based application designed to teach and demonstrate classical cryptographic techniques through interactie challenges.  
+This project is a web-based application designed to teach and demonstrate classical cryptographic techniques through interactive challenges.  
 
 ## Features
 - Multiple cipher-based challenges
